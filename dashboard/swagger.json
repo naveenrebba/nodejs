@@ -1,0 +1,232 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "This is User management  swagger API",
+      "version": "__version__"
+    },
+    "tags": [
+      {
+        "name": "PUBLIC ROUTE",
+        "description": "PUBLIC ROUTE"
+      }
+    ],
+    "paths": {
+        "/health": {
+            "summary": "Testing health",
+            "get": {
+              "description": "Testing health check",
+              "tags": ["PUBLIC ROUTE"],
+              "responses":{
+                "200": {
+                  "description": "Health check working ok"
+                }
+              }
+            }
+        },
+        "/users": {
+            "summary": "Getting User Info",
+            "get": {
+              "description": "Getting User Info",
+              "tags": ["PUBLIC ROUTE"],
+              "parameters": [
+                {
+                  "in": "query",
+                  "name":"role",
+                  "schema": {
+                    "type":"string"
+                  },
+                  "description": "Choose role as admin or user"
+                },
+                {
+                  "in": "query",
+                  "name":"city",
+                  "schema": {
+                    "type":"string"
+                  },
+                  "description": "Choose name of city"
+                },
+                {
+                  "in": "query",
+                  "name":"isActive",
+                  "schema": {
+                    "type":"string"
+                  },
+                  "description": "Choose active user"
+                }
+              ],
+              "responses":{
+                "200": {
+                  "description": "Getting User Info"
+                }
+              }
+            }
+        },
+         "/user/{id}": {
+            "summary": "Getting Particular User Info",
+            "get": {
+              "description": "Getting User Info",
+              "tags": ["PUBLIC ROUTE"],
+              "parameters": [
+                {
+                  "in": "path",
+                  "name":"id",
+                  "schema": {
+                    "type":"string"
+                  },
+                  "required":true,
+                  "description": "Id of the user"
+                }
+              ],
+              "responses":{
+                "200": {
+                  "description": "Getting User Info"
+                }
+              }
+            }
+        },
+        "/addUser": {
+            "summary": "Add new user",
+            "post": {
+              "description": "Add new user",
+              "tags": ["PUBLIC ROUTE"],
+              "requestBody": {
+                "required":true,
+                "content":{
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "id":"string"
+                    },
+                    "example": {
+                        "name": "Aakash",
+                        "city": "London",
+                        "phone": "99999",
+                        "role": "Admin",
+                        "isActive": true
+                    }
+                  }
+                }
+      
+              },
+              "responses":{
+                "200": {
+                  "description": "User Added"
+                }
+              }
+            }
+        },
+        "/updateUser": {
+            "summary": "Update user",
+            "put": {
+              "description": "Update user",
+              "tags": ["PUBLIC ROUTE"],
+              "requestBody": {
+                "required":true,
+                "content":{
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "id":"string"
+                    },
+                    "example": {
+                        "_id": "60c018a4e9942b52b2878a40",
+                        "name": "Aakash",
+                        "city": "London",
+                        "phone": "99999",
+                        "role": "Admin",
+                        "isActive": true
+                    }
+                  }
+                }
+      
+              },
+              "responses":{
+                "200": {
+                  "description": "User Updated"
+                }
+              }
+            }
+          },
+          "/deleteUser": {
+            "summary": "Delete User",
+            "delete": {
+              "description": "Delete User",
+              "tags": ["PUBLIC ROUTE"],
+              "requestBody": {
+                "required":true,
+                "content":{
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "id":"string"
+                    },
+                    "example": {
+                        "_id": "60c018a4e9942b52b2878a40"
+                    }
+                  }
+                }
+      
+              },
+              "responses":{
+                "200": {
+                  "description": "User Deleted"
+                }
+              }
+            }
+          },
+          "/deactivateUser": {
+            "summary": "Deactivate User",
+            "put": {
+              "description": "Deactivate User",
+              "tags": ["PUBLIC ROUTE"],
+              "requestBody": {
+                "required":true,
+                "content":{
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "id":"string"
+                    },
+                    "example": {
+                      "_id":"60c018a4e9942b52b2878a40"
+                    }
+                  }
+                }
+      
+              },
+              "responses":{
+                "200": {
+                  "description": "User Deactivated"
+                }
+              }
+            }
+          },
+          "/activateUser": {
+            "summary": "Activate User",
+            "put": {
+              "description": "Activate User",
+              "tags": ["PUBLIC ROUTE"],
+              "requestBody": {
+                "required":true,
+                "content":{
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "id":"string"
+                    },
+                    "example": {
+                      "_id":"60c018a4e9942b52b2878a40"
+                    }
+                  }
+                }
+      
+              },
+              "responses":{
+                "200": {
+                  "description": "Activate User"
+                }
+              }
+            }
+          }
+    }
+}

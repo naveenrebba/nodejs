@@ -1,0 +1,11 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>node with ejs</h1>
+        <h1><%=title%></h1>
+        <h2><%=keyword%></h2>
+        <h3>naveen rebba</h3>
+    </body>
+</html>

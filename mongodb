@@ -1,0 +1,170 @@
+
+C:\Users\naveen\Desktop\nodejs\weatherapi>npm run dev
+
+> weatherapi@1.0.0 dev C:\Users\naveen\Desktop\nodejs\weatherapi
+> nodemon app.js
+
+'nodemon' is not recognized as an internal or external command,
+operable program or batch file.
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! weatherapi@1.0.0 dev: `nodemon app.js`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the weatherapi@1.0.0 dev script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\naveen\AppData\Roaming\npm-cache\_logs\2021-07-05T12_43_05_749Z-debug.log
+
+
+
+
+
+C:\Users\naveen\Desktop\nodejs\weatherapi>npm start
+
+> weatherapi@1.0.0 start C:\Users\naveen\Desktop\nodejs\weatherapi
+> node app.js
+
+Server is running on port 7800
+
+
+
+
+
+
+ "scripts": {
+    "start":"node app.js",
+    "dev":"nodemon app.js"
+  }
+
+
+db.hotels.find({"city":"chandigarh"}).pretty()
+
+
+
+
+  db.hotels.find({"city":"Chandigarh"}).pretty()
+
+
+  db.hotels.find({"city":"Chandigarh"}).pretty()
+
+    db.hotels.find({"city":"Chandigarh"}).pretty()
+
+
+    Ql          No Sql  
+Database      Database   
+Tables        Collections  
+Row           Documents   
+Select        find 
+Insert        insert  
+update        update 
+delete        remove   
+
+show dbs >>>> to see all database  
+>>>>Create database/ go inside database >>>
+use maynode
+>>>>So see tables >>>> 
+show collections    
+
+>>> insert record  
+db.first.insert({name:'John',city:'London'})
+db.first.insert({name:'Aarav',city:'Paris'})
+db.first.insert({_id:1,name:'Nikita',city:'Amsterdam'})
+db.first.insert({_id:2,name:'Bhumika',city:'NewYork'})
+db.first.insert({_id:3,name:'Karan',city:'Mumbai'})
+db.first.insert({_id:3,name:'Nippun',city:'Delhi'})
+>>>>>> find record 
+db.first.find()
+db.first.find({id:768676})
+db.first.find({id:768676,city:'delhi'})
+
+db.test.insert([{},{},{}])
+
+///
+delete
+////////////////////////////////
+db.test.remove() >> remove all the data
+db.test.remove({_id:1}) >> remove particular record
+
+db.users.remove({"name":"Nikita"})
+////////////////////////////////
+update(update city=delhi where id is 1)
+////////////////////////////////
+db.test.update(
+    {_id: 1},
+    {
+        $set:{
+            "city":"delhi"
+        }
+    }
+)
+
+
+db.hotels.update(
+    {id:"123334"},
+    {
+        $set:{
+            "locality": "Sector 17"
+        }
+    }
+)
+
+///////////
+projection
+
+> select * from hotels where city = chandigarh;
+db.hotels.find({city: "Chandigarh"})
+
+db.hotels.find({query},{projection})
+
+db.hotels.find({city:"Chandigarh"},{name:1,locality:1,_id:0})
+
+db.hotels.find({},{name:1,locality:1,_id:0})
+
+db.hotels.find({},{name:1,aggregate_rating:1,_id:0})
+
+
+db.hotels.find({aggregate_rating:4},{name:1,aggregate_rating:1,_id:0})
+
+db.hotels.find({aggregate_rating:{$gt:"4.0"}},{name:1,aggregate_rating:1,_id:0})
+
+
+db.hotels.find({aggregate_rating:{$gt:"4.0"}},{name:1,aggregate_rating:1,_id:0}).sort({aggregate_rating:1})
+
+
+db.hotels.find({city:"Chandigarh"},{name:1,locality:1,_id:0})
+
+
+
+
+
+
+
+
+
+
+Error: Cannot find module 'ejs'
+Require stack:
+- C:\Users\naveen\Desktop\nodejs\dashboard\node_modules\express\lib\view.js
+- C:\Users\naveen\Desktop\nodejs\dashboard\node_modules\express\lib\application.js
+- C:\Users\naveen\Desktop\nodejs\dashboard\node_modules\express\lib\express.js
+- C:\Users\naveen\Desktop\nodejs\dashboard\node_modules\express\index.js
+- C:\Users\naveen\Desktop\nodejs\dashboard\apiwithui.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:885:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:730:27)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at new View (C:\Users\naveen\Desktop\nodejs\dashboard\node_modules\express\lib\view.js:81:14)
+    at Function.render (C:\Users\naveen\Desktop\nodejs\dashboard\node_modules\express\lib\application.js:570:12)
+    at ServerResponse.render (C:\Users\naveen\Desktop\nodejs\dashboard\node_modules\express\lib\response.js:1012:7)
+    at C:\Users\naveen\Desktop\nodejs\dashboard\apiwithui.js:37:9
+    at Layer.handle [as handle_request] (C:\Users\naveen\Desktop\nodejs\dashboard\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\naveen\Desktop\nodejs\dashboard\node_modules\express\lib\router\route.js:137:13)
+
+
+
+
+    Your login was unsuccessful, please review the errors below.....
+
+    echo "export SENDGRID_API_KEY='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'" > sendgrid.env
